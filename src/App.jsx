@@ -1,12 +1,8 @@
-import CardsProvider from './Provider/CardsProvider';
+import withProviders from './Hocs/withProviders';
 import Board from './components/Board';
 
 function App() {
-  return (
-    <CardsProvider>
-      <Board />
-    </CardsProvider>
-  );
+  return <Board />;
 }
 
-export default App;
+export default withProviders(App);
