@@ -3,8 +3,14 @@ import { rest } from 'msw';
 import { IMAGES_URL } from '../constants/api';
 
 const cardFactory = () => ({
-  id: Math.floor(Math.random() * 1000),
-  name: 'Card ' + Math.floor(Math.random() * 1000),
+  fields: {
+    image: {
+      id: Math.floor(Math.random() * 1000),
+      title: 'Card ' + Math.floor(Math.random() * 1000),
+      image: 'https://picsum.photos/200/300',
+      isToggle: false,
+    },
+  },
 });
 
 export const generateCards = (count = 10) => {
