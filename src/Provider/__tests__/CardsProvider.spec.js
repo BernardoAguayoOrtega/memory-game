@@ -3,9 +3,9 @@ import React from 'react';
 import { render, waitFor, screen } from '@testing-library/react';
 
 import { useCards } from '../../hooks/useCards';
-import CardsProvider from '../CardsProvider';
 import { server } from '../../mocks/server';
 import { getCards } from '../../mocks/handlers';
+import { CardsProvider } from '../CardsProvider';
 
 describe('CardsProvider', () => {
   beforeAll(() => server.listen());
@@ -22,7 +22,7 @@ describe('CardsProvider', () => {
     return (
       <div>
         {cards.map(card => (
-          <div key={card.id}>{card.name}</div>
+          <div key={card.id}>{card.title}</div>
         ))}
       </div>
     );
@@ -41,7 +41,7 @@ describe('CardsProvider', () => {
 
     await waitFor(() => {
       cards.forEach(card => {
-        expect(screen.getByText(card.name)).toBeInTheDocument();
+        expect(screen.getAllByText(card.fields.image.title)).toHaveLength(2);
       });
     });
   });
