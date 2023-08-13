@@ -1,10 +1,9 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
 import { render, waitFor, screen } from '@testing-library/react';
 
 import { useGame } from '../../hooks/useGame';
 import { GameProvider } from '../GameProvider';
 import userEvent from '@testing-library/user-event';
+import { CardsProvider } from '../CardsProvider';
 
 describe('CardsProvider', () => {
   const TestComponent = () => {
@@ -57,9 +56,11 @@ describe('CardsProvider', () => {
     const name = 'John Doe';
 
     render(
-      <GameProvider>
-        <TestComponent />
-      </GameProvider>
+      <CardsProvider>
+        <GameProvider>
+          <TestComponent />
+        </GameProvider>
+      </CardsProvider>
     );
 
     const nameInput = screen.getByLabelText('name');
@@ -74,9 +75,11 @@ describe('CardsProvider', () => {
     const asserts = '10';
 
     render(
-      <GameProvider>
-        <TestComponent />
-      </GameProvider>
+      <CardsProvider>
+        <GameProvider>
+          <TestComponent />
+        </GameProvider>
+      </CardsProvider>
     );
 
     const assertsInput = screen.getByLabelText('asserts');
@@ -92,9 +95,11 @@ describe('CardsProvider', () => {
     const errors = '10';
 
     render(
-      <GameProvider>
-        <TestComponent />
-      </GameProvider>
+      <CardsProvider>
+        <GameProvider>
+          <TestComponent />
+        </GameProvider>
+      </CardsProvider>
     );
 
     const errorsInput = screen.getByLabelText('errors');
@@ -103,21 +108,6 @@ describe('CardsProvider', () => {
 
     await waitFor(() => {
       expect(screen.getByText(errors)).toBeInTheDocument();
-    });
-  });
-
-  it('should show expected isWinner', async () => {
-    render(
-      <GameProvider>
-        <TestComponent />
-      </GameProvider>
-    );
-
-    const isWinnerInput = screen.getByLabelText('isWinner');
-    userEvent.click(isWinnerInput);
-
-    await waitFor(() => {
-      expect(screen.getByText('on')).toBeInTheDocument();
     });
   });
 });

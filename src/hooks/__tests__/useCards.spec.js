@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
 import { render, waitFor, screen } from '@testing-library/react';
-import React from 'react';
 
 import { server } from '../../mocks/server';
 import { useCards } from '../useCards';

@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
 import { renderHook } from '@testing-library/react-hooks';
-import React from 'react';
 import { useGame } from '../../hooks/useGame.jsx';
 
 describe('use game', () => {
