@@ -8,7 +8,7 @@ import { getCards } from '../../mocks/handlers';
 import { renderHook } from '@testing-library/react-hooks';
 import { CardsProvider } from '../../Provider/CardsProvider';
 
-describe('CardsProvider', () => {
+describe('use cards', () => {
   beforeAll(() => server.listen());
   afterEach(() => server.resetHandlers());
   afterAll(() => server.close());
