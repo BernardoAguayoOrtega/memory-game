@@ -23,6 +23,10 @@ Here's a breakdown of the yarn scripts available in the project:
 
 ## localhosts
 
+- **`https://bernardoaguayoortega.github.io/memory-game/`**: github page deploy.
+
+## deploy
+
 - **`http://localhost:5173/`**: The main application.
 
 ## Dependencies
