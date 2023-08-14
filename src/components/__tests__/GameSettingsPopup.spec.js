@@ -1,6 +1,5 @@
 import { render, waitFor, screen } from '@testing-library/react';
 
-import { server } from '../../mocks/server';
 import { CardsProvider } from '../../Provider/CardsProvider';
 import Board from '../Board';
 import { GameProvider } from '../../Provider/GameProvider';
@@ -15,10 +14,6 @@ const TestComponent = () => (
 );
 
 describe('GameSettingsPopup component', () => {
-  beforeAll(() => server.listen());
-  afterEach(() => server.resetHandlers());
-  afterAll(() => server.close());
-
   it('should render the Game Settings Popup', () => {
     render(<TestComponent />);
 
