@@ -19,6 +19,7 @@ Here's a breakdown of the yarn scripts available in the project:
 - **`preview`**: Serves the production build locally using Vite.
 - **`format`**: Formats the code using Prettier across JS, JSX, and CSS files.
 - **`test`**: Runs tests using Jest.
+- **`deploy`**: Deploy the game into github pages.
 
 ## localhosts
 
