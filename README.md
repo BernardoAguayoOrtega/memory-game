@@ -21,11 +21,11 @@ Here's a breakdown of the yarn scripts available in the project:
 - **`test`**: Runs tests using Jest.
 - **`deploy`**: Deploy the game into github pages.
 
-## localhosts
+## deploy
 
 - **`https://bernardoaguayoortega.github.io/memory-game/`**: github page deploy.
 
-## deploy
+## localhosts
 
 - **`http://localhost:5173/`**: The main application.
 
